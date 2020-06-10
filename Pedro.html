@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css"/>
+		<link rel="stylesheet" rrhref="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<title>Mateusz Janota</title>
+		<meta name="author" content="Mateusz Janota"/>
+		<meta name="descryption" content="Lekcja 26-03-2015"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Slabo+27px|Open+Sans' rel='stylesheet' type='text/css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,600,800);
+    body {
+      max-width: 100vw;
+      max-height: 100vh;
+      margin: 0;
+      padding: 0;
+      
+    }
+    #wrap{
+      background-image: url(https://lh3.googleusercontent.com/7hft7pQyNVK_1kxSpa-_hGpeguRzKJQvBdhfcWhOls7DM1k4xqbs756d1ogsZ6rxl_tR1wmf9kBlRxketIoxlKop0_b8A39TPUzJ2VMOttskLVl79qmeBU2P0SQ8xF6pqbW0EEDPMg);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: 100% 50%;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      
+    }
+    
+  #wrapper
+    width: 98%;
+    margin: 1%;
+    
+  }
+
+@media (min-width: 701px) and (max-width: 800px) {
+  ul {
+    transform: scale(0.4);
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline;
+  z-index: 1;
+}
+
+ul li {
+  margin: 0 10px;
+}
+
+ul li a .fa {
+  font-size: 20px;
+  color: #555;
+  line-height: 20px;
+  transition: 0.5s;
+}
+
+ul li a {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  text-align: center;
+  transform: perspective(1000px) rotate(-0deg) skew(3deg) translate(10,0);
+  transition: 0.5s;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 20px;
+  background: #b2b2b 2;
+  transition: 0.9s;
+  transform: rotate(0deg) skewY(0deg);
+}
+
+
+ul li a:hover {
+  transform: perspective(1000px) rotate(-0deg) skew(0deg) translate(0px,-2px);
+  box-shadow: 0px it 50px rgba(0, 0, 0, 0.5);
+}
+
+ul li:hover .fa {
+  color: #fff;
+}
+
+ul li:hover:nth-child(1) a {
+  background-color: #3b5999;
+}
+
+ul li:hover:nth-child(1) a::before {
+  background-color: #2f477a;
+}
+
+ul li:hover:nth-child(1) a::after {
+  background-color: #4e69a3;
+}
+
+ul li:hover:nth-child(2) a {
+  background-color: #55acee;
+}
+
+ul li:hover:nth-child(2) a::before {
+  background-color: #4489be;
+}
+
+ul li:hover:nth-child(2) a::after {
+  background-color: #66b4ef;
+}
+
+ul li:hover:nth-child(3) a {
+  background-color: #dd4b39;
+}
+
+ul li:hover:nth-child(3) a::before {
+  background-color: #b03c2d;
+}
+
+ul li:hover:nth-child(3) a::after {
+  background-color: #e05d4c;
+}
+
+ul li:hover:nth-child(4) a {
+  background-color: #0077b5;
+}
+
+ul li:hover:nth-child(4) a::before {
+  background-color: #005f90;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Taviraj:400,500,700");
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Taviraj', serif;
+  margin: 0;
+}
+
+
+
+div {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 90vh;
+}
+
+
+
+header {
+  height: 100vh;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lh3.googleusercontent.com/rS0bJOOqxuuCLb3YCvGgfY-3sl7Ktc2wzhWk_eHxduqCfz_0nISO1EEiFjIH5hgScHNdbHGZB8G2iv4AOXb-5pCNqCj4uKK6nk7tFq6dv2xOzLQtM2frFE2PXMwwsUgJgzgmRdmRjw");
+  background-size: cover;
+  
+  background-repeat: none;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+header .intro-text {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: auto;
+  color: #fff;
+  font-size: 3em;
+  letter-spacing: 4px;
+}
+
+.navbar {
+  height: 120px;
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.navbar .logo {
+  color: white;
+  font-size: 1.5em;
+}
+
+.fixed-nav {
+  background: white;
+  height: 100px;
+  color: black;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 5%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+.fixed-nav .logo {
+  color: black;
+}
+.fixed-nav .main-nav a {
+  color: black;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+.main-nav ul li:first-of-type {
+  margin-left: 0;
+}
+.main-nav ul li {
+  display: inline-block;
+  margin-left: 1.6em;
+}
+.main-nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8em;
+}
+
+
+
+.header {
+  
+text-align: center;
+ display: flex;
+ width:100%;
+}
+#navbar {
+ z-index: 1;
+  background-image: url();
+  background-color: white;
+ background-size: 100% 60%;
+  background-repeat: no-repeat;
+  background-position: cover;
+  height:17vh;
+  
+  
+  
+  text-align: center;
+  display: inline-block;
+ 
+
+  box-shadow: 30 0 12px 0 ;
+  align-items: center;
+  
+  width: 100%;
+ 
+  
+ background-blend-mode: difference;
+ 
+  }
+  
+  #navbar a{
+    text-decoration: none;
+    color: black;
+    width: 10%;
+   
+    text-align: center;
+    
+  
+    
+   
+  }
+  #navbar a:hover {
+    color: tan;
+  }
+  .iconbar{
+   justify-content: justify;
+  text-align: center;
+  padding-left: 5%;
+  }
+  
+
+   
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #white;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color:#ddd;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 2px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+
+  #wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+   background-color: transparent;
+    
+  }
+  img{
+    
+    width: 100%;
+    height: 100%;
+  }
+
+  .responsive{
+
+
+  }
+    
+ 
+.flex-container {
+  margin-top: 10vh;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  margin-bottom: 10%;
+  
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 30%;
+ height: 160px;
+  margin: 5px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+ 
+}
+aside{
+  position: absolute;
+  right: 10px;
+  top: 25%;
+}
+/* CSS used here will be applied after bootstrap.css */
+.carousel {
+    margin-top: 5px;
+    width: 100%;
+  height: 250px;
+}
+.item .thumb {
+	width: 25%;
+	margin-top:20%;
+	cursor: pointer;
+	float: left;
+}
+.item .thumb img {
+	width: 100%;
+	margin: 2px;
+	height:130px ;
+		margin-top: 4%;
+}
+.item img {
+	width: 100%;	
+	height:100%;
+
+}
+.left {
+  
+}
+
+
+.prev .next{
+margin-top:20%;
+}
+.button2{
+  background: gold;
+  color: purple;
+  height: 30px;
+  width: 80px;
+  float: right;
+  border: 1px solid #666;
+  border-radius: 5%;
+  margin-top: 5%;
+  margin-right: 20%;
+}
+body {
+  font-family: "Helvetica Neue", arial, sans-serif;
+  
+}
+.col-sm-6{
+  margin-top:0;
+}
+
+h1 {
+  font-size: 8px;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 8px;
+}
+.responsive{
+  height: 150px;
+  width: 120px;
+}
+progress, progress[role] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-size: auto;
+  height: 10px;
+  width: 90%;
+  opacity: .3;
+}
+
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+.skill {
+  margin-bottom: 1em;
+  position: relative;
+}
+.skill h3 {
+  color: #fff;
+  left: 1em;
+  line-height: 1;
+  position: absolute;
+  top: 1em;
+}
+.skill ::-webkit-progress-value {
+  -webkit-animation: bar-fill 2s;
+  width: 0px;
+}
+
+.skill-1::-webkit-progress-value {
+  background: #ff9e2c;
+}
+
+.skill-1::-moz-progress-bar {
+  background: #ff9e2c;
+}
+
+.skill-2::-webkit-progress-value {
+  background: #4ecdc4;
+}
+
+.skill-2::-moz-progress-bar {
+  background: #4ecdc4;
+}
+
+.skill-3::-webkit-progress-value {
+  background: #ff6b6b;
+}
+
+.skill-3::-moz-progress-bar {
+  background: #ff6b6b;
+}
+
+@-webkit-keyframes bar-fill {
+  0% {
+    width: 0;
+  }
+}
+@keyframes bar-fill {
+  0% {
+    width: 0;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .item .thumb{
+ display: none;
+    
+    
+   
+  }
+}
+@media only screen and (min-width: 600px) {
+  .prev {
+   
+    display: none;
+    
+    
+    
+   
+  }
+  .prev .next{
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .carousel  {
+    height: 100px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .button  {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .button2  {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+ 
+<div id="wrapper">
+<header class="header">
+  <div class="navbar">
+    <h3 class="logo">G.O.A.T</h3>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="Sanped.html"><i class="fa fa-user"></i></a></li>
+        <li><a href="#"><i class="fa fa-plus"></i></a></li>
+        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
+			
+			
+			</div>
+			</div>
+ <aside>
+  <ul class="skill-list">
+  <li class="skill">
+    <h3>offense</h3>
+    <progress class="skill-1" max="100" value="50">
+      <strong>Skill Level: 50%</strong>
+    </progress>
+  </li>
+  <li class="skill">
+    <h3>defense</h3>
+    <progress class="skill-2" max="100" value="75">
+      <strong>Skill Level: 75%</strong>
+    </progress>
+  </li>
+  <li class="skill">
+    <h3>championships</h3>
+    <progress class="skill-3" max="100" value="25">
+      <strong>Skill Level: 25%</strong>
+    </progress>
+  </li>
+</ul>
+</aside>
+</header>
+<div style="background-image: url(https://placeimg.com/1000/600/arch);"></div>
+
+<div style="background-image: url(https://placeimg.com/1000/600/nature);"></div>
+
+<div style="background-image: url(https://placeimg.com/1000/600/tech);"></div>
+
+  
+
+        
+             <div class="button2">
+                  view more
+                </div>
+  <div class="container">
+  <div class="row">
+    
+
+    <div class="col-sm-6">
+        <div id="carousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+        <div class="item active" data-thumb="0">
+            <img class="resp" src="https://lh3.googleusercontent.com/6xyNWi9RcQq6E4ISRHVEd-LN4ibMXmfTEMdnjC4SVq_JZ8kIhVHOcFAxjc9UOHxWo6jZ1sslfeiiNeSfqVYPRzSulTeYFrPnFq9OIq46K5rAL2FzChqtOAGbjj8clhNEAlT4h-G4Pw">
+        </div>
+        <div class="item" data-thumb="0">
+            <img class="resp" src="https://lh3.googleusercontent.com/xACFSeNTt919nHC1TGPShFR3WBjt9tEw1c8MHR8Qfe3DMNhNDw0p0bNv4U4JbY9kHf0Ew4nheYKQHNfZN6rMtqLhl0-vb_OGmGZlf5r7-_p-kXM1V7Dbr6SDilpBTZUwzUDE1KShuQ">
+        </div>
+        <div class="item" data-thumb="0">
+            <img class="resp" src="https://lh3.googleusercontent.com/q25N9x8vyuSPi8izhFzrkZaMxM9XdbGFgZjnARv-tWKR0Pt2VAhzuixqcb2xyf3_Q52n0wwZGNGGJ9GmLnVLyan-pgh_hFLbeQqSJrtPwhXq32rIvceQsCePSLorwcmRK60rsFxBAw">
+        </div>
+        <div class="item" data-thumb="0">
+            <img class="resp" src="https://lh3.googleusercontent.com/8fEV2QvE81P6jV9Evdcg7tA_axUiRPU5u93lbIqrq9joTZqR1v8cqg0pceBdiJ4DnNIhNjEEQBgUwv6urAvALngOWJUGgxFygJvDiSJBwNSR-jLeeCJQ2CIQvtM2vzVv9FHvvr1bdA">
+        </div>
+        <div class="item" data-thumb="1">
+            <img class="resp" src="https://lh3.googleusercontent.com/ch-7D3m1P0sJKKVAljgpLlW2DAabAcLjW7M69aocqYIyRxpbEsmm9WnryYmMtdFHY5R1s5IWWolR58akAORIXa9G-xcRCoGZKOGEIhV33pkvFA4GR_i13wA27tw9QQPfUV3yiyUYLA">
+        </div>
+        <div class="item" data-thumb="1">
+            <img class="resp" src="https://lh3.googleusercontent.com/K43BiicNXa3do1HorI3KwyHcb-OUlsziC26oDhNAtnj1w1e4JQk9mwJnFHOta-ApDJP2bI1jCZctZgVMHINNh_XSDRbX9KFQaNJkHd1LoN0N886vYw3wSGVjGQQrTlAmDabBwZLm2A">
+        </div>
+        <div class="item" data-thumb="1">
+            <img class="resp" src="https://lh3.googleusercontent.com/AM_67hYHb9UlUXOyIlVnt9QSMesGT-8xlCdKcnzrDoDTUztiHrfRX7oH4htnsVmdYqNPYOxnHERU2aDQB6ufSQf7abwFuauWoqJfqrUtc2dMluy44ef-Av8AJg082EkY0LtX7o7leQ">
+        </div>
+        <div class="item" data-thumb="1">
+            <img class="resp" src="https://lh3.googleusercontent.com/K63qy6aeNCP7S70iuWs7TcM_k6fyqgaEdC3-gE63pWygvzBcP_ZKRCEP13qrJgljHy10WMgfmloZgMGyYwquh6k1OL9zVCVfVAnhvLbxHlgosQXbLe2wRxqCzDrSpRYr2GsFyONTnA">
+        </div>
+    </div>
+
+        </div> 
+
+    
+        
+           
+        <div id="thumbcarousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="https://lh3.googleusercontent.com/6xyNWi9RcQq6E4ISRHVEd-LN4ibMXmfTEMdnjC4SVq_JZ8kIhVHOcFAxjc9UOHxWo6jZ1sslfeiiNeSfqVYPRzSulTeYFrPnFq9OIq46K5rAL2FzChqtOAGbjj8clhNEAlT4h-G4Pw"></div>
+                    <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="https://lh3.googleusercontent.com/xACFSeNTt919nHC1TGPShFR3WBjt9tEw1c8MHR8Qfe3DMNhNDw0p0bNv4U4JbY9kHf0Ew4nheYKQHNfZN6rMtqLhl0-vb_OGmGZlf5r7-_p-kXM1V7Dbr6SDilpBTZUwzUDE1KShuQ"></div>
+                    <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="https://lh3.googleusercontent.com/q25N9x8vyuSPi8izhFzrkZaMxM9XdbGFgZjnARv-tWKR0Pt2VAhzuixqcb2xyf3_Q52n0wwZGNGGJ9GmLnVLyan-pgh_hFLbeQqSJrtPwhXq32rIvceQsCePSLorwcmRK60rsFxBAw"></div>
+                    <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="https://lh3.googleusercontent.com/8fEV2QvE81P6jV9Evdcg7tA_axUiRPU5u93lbIqrq9joTZqR1v8cqg0pceBdiJ4DnNIhNjEEQBgUwv6urAvALngOWJUGgxFygJvDiSJBwNSR-jLeeCJQ2CIQvtM2vzVv9FHvvr1bdA"></div>
+                </div><!-- /item -->
+                <div class="item">
+                    <div data-target="#carousel" data-slide-to="4" class="thumb"><img src="https://lh3.googleusercontent.com/ch-7D3m1P0sJKKVAljgpLlW2DAabAcLjW7M69aocqYIyRxpbEsmm9WnryYmMtdFHY5R1s5IWWolR58akAORIXa9G-xcRCoGZKOGEIhV33pkvFA4GR_i13wA27tw9QQPfUV3yiyUYLA"></div>
+                    <div data-target="#carousel" data-slide-to="5" class="thumb"><img src="https://lh3.googleusercontent.com/K43BiicNXa3do1HorI3KwyHcb-OUlsziC26oDhNAtnj1w1e4JQk9mwJnFHOta-ApDJP2bI1jCZctZgVMHINNh_XSDRbX9KFQaNJkHd1LoN0N886vYw3wSGVjGQQrTlAmDabBwZLm2A"></div>
+                    <div data-target="#carousel" data-slide-to="6" class="thumb"><img src="https://lh3.googleusercontent.com/AM_67hYHb9UlUXOyIlVnt9QSMesGT-8xlCdKcnzrDoDTUztiHrfRX7oH4htnsVmdYqNPYOxnHERU2aDQB6ufSQf7abwFuauWoqJfqrUtc2dMluy44ef-Av8AJg082EkY0LtX7o7leQ"></div>
+                    <div data-target="#carousel" data-slide-to="7" class="thumb"><img src="https://lh3.googleusercontent.com/K63qy6aeNCP7S70iuWs7TcM_k6fyqgaEdC3-gE63pWygvzBcP_ZKRCEP13qrJgljHy10WMgfmloZgMGyYwquh6k1OL9zVCVfVAnhvLbxHlgosQXbLe2wRxqCzDrSpRYr2GsFyONTnA"></div>
+                </div><!-- /item -->
+              
+            </div><!-- /carousel-inner -->
+            <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div> <!-- /thumbcarousel -->
+    </div>
+
+    <div class="col-sm-6">
+        <h2>Products</h2>
+       
+
+<section>
+  <div class="shopping-header">
+    <div class="results">Showing 1 -10 of 46 results</div>
+    <div class="filter">
+      <select name="sort" id="sort">
+        <option value="Sort By" selected="selected" disabled>Sort by </option>
+        <option value="price">Price</option>
+        <option value="latest">Latest</option>
+        <option value="newest">Newest</option>
+      </select>
+    </div>
+  </div>
+  </section>
+<div class="button"></div>
+    </div> <!-- /col-sm-6 -->
+  </div> <!-- /row -->
+</div> <!-- /container -->
+    <div class="face">
+    
+
+    <div class="text">
+      
+    </div>
+  </div>
+ 
+   <div class="flex-container">
+     <div>1</div>
+       <div>2</div>
+       <div>3</div>
+           <div>4</div>
+       <div>5</div>
+       <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      
+     <div></div>
+     <div></div>
+     <div></div>
+   </div>
+   </div>
+   </div>
+  
+   
+      
+        
+        <div class="bottomfooter">
+         <img src = "https://lh3.googleusercontent.com/8XFab23dveHTsQeLPQbflDo0Hi-XlfKqgAOs9Ee99NVL8fcjj4RFndYmS0ScPCZenqcTv5XdyAyBFp5yt4vvmswOO5yWmSofk2knqvHwVNqe4iIu7PQeTaM9ok-0xpNCIVl8vXfEIA" width="500" height="315" />
+          <p>fernand0e88capitalv@gmail.com</p>
+        </div>
+      </div>
+
+    
+    </div>
+
+  <script>
+    
+    (function($){
+    $('#thumbcarousel').carousel(0);
+    var $thumbItems = $('#thumbcarousel .item');
+    $('#carousel').on('slide.bs.carousel', function (event) {
+       var $slide = $(event.relatedTarget);
+       var thumbIndex = $slide.data('thumb');
+       var curThumbIndex = $thumbItems.index($('#thumbcarousel .item.active').get(0));
+        if (curThumbIndex>thumbIndex) {
+            $('#thumbcarousel').one('slid.bs.carousel', function (event) {
+                $('#thumbcarousel').carousel(thumbIndex);
+            });
+            if (curThumbIndex === ($thumbItems.length-1)) {
+                $('#thumbcarousel').carousel('next');
+            } else {
+                $('#thumbcarousel').carousel(numThumbItems-1);
+            }
+        } else {
+            $('#thumbcarousel').carousel(thumbIndex);
+        }
+    });
+})(jQuery);
+  </script>
+
+<script>
+  
+  const nav = document.querySelector(".navbar");
+const header = document.querySelector('.header');
+const headerHeight = header.clientHeight;
+
+
+function fixNavbar() {
+    
+  const scrollY = window.scrollY;
+  console.log(scrollY);
+  if (scrollY > (headerHeight)) {
+    nav.classList.add("fixed-nav");
+  }
+  
+  if (scrollY < (headerHeight)) {
+    nav.classList.remove("fixed-nav");
+  }
+  
+}
+
+window.addEventListener('scroll', fixNavbar);
+</script>
+<script>
+  
+  /* Demo purposes only */
+  $(".hover").mouseleave(
+    function () {
+      $(this).removeClass("hover");
+    }
+  );
+</script>
+</body>
+</html>
